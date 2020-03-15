@@ -1,0 +1,257 @@
+/*Estilo da pagina inteira*/
+
+body {
+    background: url("../img/fundo.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+
+/*Estilo da section do formulario*/
+
+.formula {
+    background-color: white;
+    width: 450px;
+    height: 700px;
+    position: relative;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 5px 10px 9px rgb(90, 90, 90);
+}
+
+
+/*Estilo do titulo(h2)*/
+
+.formula .titulo {
+    position: relative;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    color: brown;
+    background-color: white;
+    border-radius: 10px;
+    text-shadow: 0px 0px 2px rgb(172, 39, 39);
+}
+
+
+/*Estilo do subtitulo(h3)*/
+
+.formula .subtitulo {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(77, 77, 77);
+    background-color: white;
+}
+
+
+/*Estilo da pagina dos forms*/
+
+.formula .dados {
+    background-color: white;
+    margin: 35px;
+    padding: 0%;
+}
+
+
+/*Estilo da div dos input*/
+
+.formula .dados div {
+    margin: 25px;
+    font-family: 'Varela Round', sans-serif;
+    background-color: white;
+    text-align: center;
+}
+
+
+/*Estilo dos label*/
+
+.formula .dados label {
+    background-color: white;
+}
+
+
+/*Estilo dos input*/
+
+.formula .dados input {
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(131, 5, 5);
+    border-color: rgb(92, 87, 87);
+    text-decoration: none;
+    outline: 0;
+}
+
+
+/*Estilo do batão calcular*/
+
+.formula .dados .btn {
+    background-color: rgb(155, 11, 11);
+    color: white;
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    border-color: transparent;
+    font-family: 'Passion One', cursive;
+}
+
+
+/*Estilo do botão calcular ao passar o mause*/
+
+.formula .dados .btn:hover {
+    text-shadow: 0px 0px 3px rgb(250, 250, 250);
+    box-shadow: 0px 0px 10px rgb(194, 24, 24);
+}
+
+
+/*Estilo da div resultado*/
+
+.formula .dados .resultado {
+    background-color: whitesmoke;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 2px solid black;
+    color: rgb(92, 87, 87);
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/*Estilo do titulo(h2) do resultado*/
+
+.formula .dados .resultado h2 {
+    font-size: 20px;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+
+/*Estilo do credito do desenvolvedor*/
+
+.formula .dados .credito {
+    color: rgb(92, 87, 87);
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/*Estilo do icone de info*/
+
+.duvidas i {
+    position: fixed;
+    top: 90%;
+    right: 2%;
+    border-radius: 100px;
+    font-size: 40px;
+    color: rgb(168, 8, 8);
+    animation: bounce 2s ease;
+    opacity: 0.7;
+}
+
+
+/*Estilo do icone de info ao passar o mause*/
+
+.duvidas i:hover {
+    animation: bouncehover 2s ease;
+    opacity: 0.9;
+}
+
+
+/*Animação do icone ao acessar o site*/
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.9, 1.1) translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    75% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*Animação do icone ao passar o mause*/
+
+@keyframes bouncehover {
+    0% {
+        transform: scale(0.9, 1.1) translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+
+/*Configurações para Desktop, Tablet, Mobile*/
+
+@media (min-width: 1281px) {
+    .formula {
+        max-width: 100%;
+    }
+    .formula .dados .resultado {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .formula {
+        max-width: 100%;
+    }
+    .formula .dados .resultado {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .formula {
+        max-width: 100%;
+    }
+    .formula .dados .resultado {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .formula {
+        max-width: 100%;
+    }
+    .formula .dados .resultado {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .formula {
+        max-width: 100%;
+    }
+    .formula .dados .resultado {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .formula {
+        max-width: 100%;
+    }
+    .formula .dados .resultado {
+        max-width: 100%;
+    }
+}

@@ -12,8 +12,11 @@
     <script src="https://kit.fontawesome.com/3d5793b601.js" crossorigin="anonymous"></script>
     <!--Icone do site-->
     <link rel="shortcut icon" href="img/icone.png" type="image/x-png">
+
     <!--Criado e desenvolvido por Guilherme F. de Araujo  //  Whatsapp.: (69) 9 8424-6678-->
     <!--Desenvolvido para fins acadêmicos-->
+    <!--Bhaskara v2-->
+
     <title>Bhaskara</title>
 </head>
 
@@ -80,41 +83,76 @@
             x1 = calc1 / Adivisao;
             x2 = calc2 / Adivisao;
 
-            //operação com os passos da função(como é feita a equação)
+            //Condição para detrminar o tipo da raiz operação com os passos da função(como é feita a equação)
 
-            resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
-            resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
-            resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
-            resultado.innerHTML += ("<P>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
-            resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+" + AC + "</P>");
-            resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
-
-            resultado.innerHTML += ("-=-=-=-=-=-=-=Bhaskara=-=-=-=-=-=-=-=");
-            resultado.innerHTML += ("<P>" + "X= -(" + B + ")±√" + delta + "/2." + A + "</P>");
-            resultado.innerHTML += ("<P>" + "X= " + Bnegativo + "+" + raiz + "/2." + A + "</P>");
-
-            resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X'=-=-=-=-=-=-=-=");
-            resultado.innerHTML += ("<P>" + "X'= (" + Bnegativo + "+" + raiz + ")/2." + A + "</P>");
-            resultado.innerHTML += ("<P>" + "X'= " + calc1 + "/2." + A + "</P>");
-            resultado.innerHTML += ("<P>" + "X'= " + calc1 + "/" + Adivisao + "</P>");
-            resultado.innerHTML += ("<P>" + "X'= " + x1 + "</P>");
-
-            resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X''=-=-=-=-=-=-=-=");
-            resultado.innerHTML += ("<P>" + "X''= (" + Bnegativo + "-" + raiz + ")/2." + A + "</P>");
-            resultado.innerHTML += ("<P>" + "X''= " + calc2 + "/2." + A + "</P>");
-            resultado.innerHTML += ("<P>" + "X''= " + calc2 + "/" + Adivisao + "</P>");
-            resultado.innerHTML += ("<P>" + "X''= " + x2 + "</P>");
-
-            resultado.innerHTML += ("-=-=-=-=-=-=-=Qual tipo de raiz=-=-=-=-=-");
-
-
-            //Condição para detrminar o tipo da raiz
-
+            //quando o delta for menor do que zero
             if (delta < 0) {
-                resultado.innerHTML += ("<P>" + "Raiz negativo." + "</P>");
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+" + AC + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Qual tipo de raiz=-=-=-=-=-");
+                resultado.innerHTML += ("<P>" + "Delta negativo." + "</P>");
+
+
+                //quando o delta for igual a zero
             } else if (delta == 0) {
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+" + AC + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Bhaskara=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "X= -(" + B + ")±√" + delta + "/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X= " + Bnegativo + "±" + raiz + "/2." + A + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X'=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "X'= (" + Bnegativo + "+" + raiz + ")/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "/" + Adivisao + "</P>");
+                resultado.innerHTML += ("<P>" + "X'= " + x1 + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X''=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "X''= (" + Bnegativo + "-" + raiz + ")/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "/" + Adivisao + "</P>");
+                resultado.innerHTML += ("<P>" + "X''= " + x2 + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Qual tipo de raiz=-=-=-=-=-");
                 resultado.innerHTML += ("<P>" + "Raizes iguais" + "</P>");
+
+
+                //quando o delta for maior do que zero
             } else {
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+" + AC + "</P>");
+                resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Bhaskara=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "X= -(" + B + ")±√" + delta + "/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X= " + Bnegativo + "±" + raiz + "/2." + A + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X'=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "X'= (" + Bnegativo + "+" + raiz + ")/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "/" + Adivisao + "</P>");
+                resultado.innerHTML += ("<P>" + "X'= " + x1 + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X''=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<P>" + "X''= (" + Bnegativo + "-" + raiz + ")/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "/2." + A + "</P>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "/" + Adivisao + "</P>");
+                resultado.innerHTML += ("<P>" + "X''= " + x2 + "</P>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Qual tipo de raiz=-=-=-=-=-");
                 resultado.innerHTML += ("<P>" + "Raizes diferentes." + "</P>");
 
             }

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link do CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <!--API das font-family (google fonts)-->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Pacifico|Passion+One&display=swap" rel="stylesheet">
+    <!--CDN dos icones do site-->
+    <script src="https://kit.fontawesome.com/3d5793b601.js" crossorigin="anonymous"></script>
+    <!--Icone do site-->
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-png">
+
+    <!--Criado e desenvolvido por Guilherme F. de Araujo  //  Whatsapp.: (69) 9 8424-6678-->
+    <!--Desenvolvido para fins acadêmicos-->
+    <!--Bhaskara v3-->
+
+    <title>Calculando Bhaskara</title>
+</head>
+
+<body>
+
+    <!--Inicio do form-->
+    <section class="formula">
+        <h2 class="titulo">Vamos resolver?</h2>
+        <h3 class="subtitulo">Δ=b²-4.a.c</h3>
+        <form class="dados">
+            <div>
+                <label for="">A:</label>
+                <input type="number" id="A" placeholder="Digite o valor de A!" required>
+            </div>
+            <div>
+                <label for="">B:</label>
+                <input type="number" id="B" placeholder="Digite o valor de B!" required>
+            </div>
+            <div>
+                <label for="">C:</label>
+                <input type="number" id="C" placeholder="Digite o valor de C!" required>
+            </div>
+            <div>
+                <input class="btn" type="submit" id="calc" value="Calcular">
+            </div>
+            <div class="resultado" style="overflow:scroll; overflow:auto ; background-color: transparent;">
+                <h2>.:Resposta:.</h2>
+            </div>
+            <br>
+            <p class="credito">Desenvolvido por Guilherme Araujo</p>
+        </form>
+    </section>
+    <!--API do whatsapp para realizar suporte de duvidas-->
+    <section class="duvidas">
+        <a href="https://api.whatsapp.com/send?phone=5569984246678&text=Olá, tenho uma duvidas!" text="ola" target="_blank"><i class="far fa-question-circle"></i></a>
+    </section>
+
+    <script>
+        const calc = document.querySelector('.dados');
+
+        function calcular() {
+            let RA = document.querySelector('#A');
+            //console.log(A);
+            let RB = document.querySelector('#B');
+            //console.log(B);
+            let RC = document.querySelector('#C');
+            //console.log(C);
+            const resultado = document.querySelector('.resultado');
+            resultado.innerHTML = '';
+            let delta, raiz, x1, x2
+            let A = Number(RA.value)
+            let B = Number(RB.value)
+            let C = Number(RC.value);
+
+            //operdadores da função
+
+            B2 = (B * B);
+            AC = (-4 * (A) * (C));
+            delta = ((B * B) - (4 * (A) * (C)));
+            raiz = Math.sqrt(delta);
+            Bnegativo = -1 * B;
+            Adivisao = 2 * A;
+            calc1 = Bnegativo + raiz;
+            calc2 = Bnegativo - raiz;
+            x1 = calc1 / Adivisao;
+            x2 = calc2 / Adivisao;
+
+            //Condição para detrminar o tipo da raiz operação com os passos da função(como é feita a equação)
+
+            //quando o delta for menor do que zero
+            if (delta < 0) {
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P 'color =red;'>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+(" + AC + ")" + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("=-=-=-=-=-=-Qual o tipo de raiz-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "O delta é negativo e não possui raiz." + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                //quando o delta for igual a zero
+            } else if (delta == 0) {
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P 'color =red;'>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+(" + AC + ")" + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Bhaskara=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X= (-(" + B + ")±√" + delta + ")" + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X= " + Bnegativo + "±" + raiz + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X'=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + Bnegativo + "+" + raiz + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + Adivisao + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + x1 + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X''=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= (" + Bnegativo + "-" + raiz + ")" + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + Adivisao + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= " + x2 + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("=-=-=-=-=-=-Qual o tipo de raiz-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Raizes iguais" + "</P>");
+                resultado.innerHTML += ("<br>");
+
+
+                //quando o delta for maior do que zero
+            } else {
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Segundo Grau=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= b²-4.a.c" + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= (" + B + "²)" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P 'color =red;'>" + "Δ= (" + B2 + ")" + "-4." + A + "." + C + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= " + B2 + "+(" + AC + ")" + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Δ= " + delta + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Bhaskara=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X= (-(" + B + ")±√" + delta + ")" + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X= " + Bnegativo + "±" + raiz + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X'=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + Bnegativo + "+" + raiz + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + calc1 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + Adivisao + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X'= " + x1 + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("-=-=-=-=-=-=-=Conta do X''=-=-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= (" + Bnegativo + "-" + raiz + ")" + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + "2." + A + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= " + calc2 + "</P>");
+                resultado.innerHTML += ("<hr></hr>");
+                resultado.innerHTML += ("<P>" + Adivisao + "</P>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "X''= " + x2 + "</P>");
+                resultado.innerHTML += ("<br>");
+
+                resultado.innerHTML += ("=-=-=-=-=-=-Qual o tipo de raiz-=-=-=-=-=-=");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<br>");
+                resultado.innerHTML += ("<P>" + "Raizes diferentes." + "</P>");
+                resultado.innerHTML += ("<br>");
+
+            }
+            //reset 
+            RA.value = '', RB.value = '', RC.value = ''
+
+        }
+        //comando para ativar a função calcular
+        calc.addEventListener('submit', function(e) {
+            e.preventDefault();
+            calcular();
+        });
+    </script>
+
+</body>
+
+</html>
